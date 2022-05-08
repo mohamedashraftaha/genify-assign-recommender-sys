@@ -30,4 +30,4 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
     python3 app.py
 
 
-* Using the API hosted on Heroku
+### Using the API hosted on Heroku
