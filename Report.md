@@ -153,6 +153,34 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
 ---
 ### Screenshot
 ![image](https://user-images.githubusercontent.com/75078872/167313919-df2f9672-1cfd-4400-be59-5e0d56065ce3.png)
+---
+### Example 4 (Validation: Missing data -> Gender)
+#### (Query)
+    Query:
+    curl -X 'POST' \
+      'http://10.40.60.52:5000/recommend' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "age": "16",
+      "nationality": "FRANCE",
+      "seniority": "150",
+      "relationship_type": "INACTIVE",
+      "activity_level": "INACTIVE",
+      "segment": "UNIVERSITY",
+      "income": "140"
+    }'
+----
 
+#### (Response)
+    Response: 
+    {
+      "msg": "Missing field",
+      "response_data": null,
+      "status": "Failed"
+    }
+---
+### Screenshot
+![image](https://user-images.githubusercontent.com/75078872/167314052-1508fab4-7c49-41f1-9658-129d8c371d0d.png)
 ## Demo Video Link uploaded on google drive
 
