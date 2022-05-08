@@ -38,9 +38,9 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
 
 ### Docker Container 
 #### Build
- docker build --tag python-docker .
+    docker build --tag python-docker .
 #### Run
-docker run python-docker 
+    docker run python-docker 
 
 
 
