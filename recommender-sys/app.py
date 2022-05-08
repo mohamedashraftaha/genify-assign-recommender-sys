@@ -34,8 +34,8 @@ user_data =     {
 "fecha_dato": "2016-06-28",
 "ncodpers": "15889",
 "ind_empleado": "F",
-'pais_residencia':'LV' ,
-"sexo":'V',
+'pais_residencia':None  ,
+"sexo":None ,
 'age': None,
 "fecha_alta":"1995-15-01",
 "ind_nuevo":"0",
@@ -43,7 +43,7 @@ user_data =     {
 "indrel":"1",
 "ult_fec_cli_1t":"",
 "indrel_1mes":"1",
-"tiprel_1mes":"A",
+"tiprel_1mes":None ,
 "indresi":"S",
 "indext":"N",
 "conyuemp":"N",
@@ -59,9 +59,8 @@ user_data =     {
 
 @api.route('/recommend', methods = ['POST', 'GET'])
 class recommend(Resource):
-    recommend_post_data = api.model ("registerAdminData",{'seniority':fields.String(),'income':fields.String(),\
-        'age':fields.String(), 'segment': fields.String() , \
-            'client_activity': fields.String()})
+    recommend_post_data = api.model ("registerAdminData",{ 'age':fields.String(), 'gender': fields.String(), 'nationality': fields.String(), 'seniority':fields.String(), 'relationship_type': fields.String(),\
+       'activity_level': fields.String(), 'segment': fields.String() , 'income':fields.String()})
     @api.doc(body=recommend_post_data)
     def post(self):
         """
@@ -75,10 +74,15 @@ class recommend(Resource):
         try:
             # getting the data from the request
             data = request.json            
-
+            
             ''' Map activity type to Active (1) or inactive (0)'''
-            user_activity = data['client_activity']
+            user_activity = data['activity_level']
             user_segment = data['segment']
+            gender = data['gender']
+            relationship_type = data['relationship_type']
+            
+            
+            '''Validations'''
             if (user_activity == "ACTIVE"):
                 user_activity = '1'
             elif user_activity == "INACTIVE":
@@ -101,13 +105,30 @@ class recommend(Resource):
                 response_data = None
                 raise NotFound
                             
-            
+            if (gender == 'MALE'):
+                gender = 'H'
+            elif gender == 'FEMALE':
+                gender = 'V'
+            else:
+                msg = "Invalid input"
+                status = "Failed"
+                response_data = None
+                raise NotFound
+
+            if relationship_type not in ['ACTIVE', 'INACTIVE', 'POTENTIAL', 'FORMER CUSTOMER', 'FORMER CO-OWNER']:
+                msg = "Invalid input"
+                status = "Failed"
+                response_data = None
+                raise NotFound
             user_data['age'] = data['age']
             user_data['antiguedad'] =  data['seniority']
             user_data['ind_actividad_cliente'] = user_activity
             user_data['renta'] = data['income']
             user_data['segmento'] = user_segment
-    
+            user_data['sexo'] = gender
+            user_data['pais_residencia']  = data['nationality'][0:2]
+            user_data['tiprel_1mes']  = relationship_type
+
             print(user_data)
             '''
             generating the recommendations from the model
@@ -133,6 +154,7 @@ class recommend(Resource):
             })
         except NotFound as e:
             print('Exception',e)
+            print(e.all())
             return jsonify({
                 'msg': msg,
                 'status': status,

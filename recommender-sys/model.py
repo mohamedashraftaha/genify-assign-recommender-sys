@@ -18,7 +18,7 @@ mapping_dict = {
 'ind_nuevo'     : {'0':0, '1':1, -99:2},
 'indrel'        : {'1':0, '99':1, -99:2},
 'indrel_1mes'   : {-99:0, '1.0':1, '1':1, '2.0':2, '2':2, '3.0':3, '3':3, '4.0':4, '4':4, 'P':5},
-'tiprel_1mes'   : {-99:0, 'I':1, 'A':2, 'P':3, 'R':4, 'N':5},
+'tiprel_1mes'   : {-99:0, 'INACTIVE':1, 'ACTIVE':2, 'POTENTIAL':3, 'FORMER CUSTOMER':4, 'FORMER CO-OWNER':5},
 'indresi'       : {-99:0, 'S':1, 'N':2},
 'indext'        : {-99:0, 'S':1, 'N':2},
 'conyuemp'      : {-99:0, 'S':1, 'N':2},
