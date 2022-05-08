@@ -23,12 +23,11 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
 
 
 ## To use the API
-* Manually
-   - git clone https://github.com/mohamedashraftaha/genify-assign-recommender-sys.git
-
-   - source venv/bin/activate
-   - pip3 install -r requirements.txt
-   - python3 app.py
+### Manually
+    git clone https://github.com/mohamedashraftaha/genify-assign-recommender-sys.git
+    source venv/bin/activate
+    pip3 install -r requirements.txt
+    python3 app.py
 
 
 * Using the API hosted on Heroku
