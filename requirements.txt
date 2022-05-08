@@ -12,3 +12,4 @@ xgboost==1.6.0
 flask
 flask-restx
 gunicorn
+flask_admin
