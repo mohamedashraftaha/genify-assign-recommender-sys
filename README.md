@@ -31,6 +31,7 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
 
 
 ### Using the API hosted on Heroku
+[genify-api-task](https://genify-api-task.herokuapp.com/) on Heroku
 
 ## Example Queries (Also attached in the report)
 
