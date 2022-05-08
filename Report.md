@@ -33,8 +33,126 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
 ### Using the API hosted on Heroku
 
 ## Example Queries (Also attached in the report)
+### Example 1
+#### (Query)
+    Query:
+    curl -X 'POST' \
+    'http://10.40.60.52:5000/recommend' \
+    -H 'accept: application/json' \
+    -H 'Content-Type: application/json' \
+    -d '{
+    "age": "26",
+    "gender": "MALE",
+    "nationality": "GERMANY",
+    "seniority": "240",
+    "relationship_type": "ACTIVE",
+    "activity_level": "ACTIVE",
+    "segment": "INDIVIDUAL",
+    "income": "3023.4"
+    }'
+----
 
+#### (Response)
+    Response: 
+    {
+      "msg": "Recommendations for user generated successfully",
+      "response_data": {
+        "Recommended Products": [
+          "Current Accounts",
+          "Direct Debit",
+          "Pensions",
+          "Payroll Account",
+          "Payroll",
+          "Credit Card",
+          "E-Account"
+        ]
+      },
+      "status": "Success"
+    }
+---
+### Screenshot
+![image](https://user-images.githubusercontent.com/75078872/167313682-785caac0-930a-4962-bace-6159a33a14ac.png)
 
+---
+### Example 2
+#### (Query)
+    Query:
+    curl -X 'POST' \
+      'http://10.40.60.52:5000/recommend' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "age": "65",
+      "gender": "FEMALE",
+      "nationality": "EGYPT",
+      "seniority": "500",
+      "relationship_type": "ACTIVE",
+      "activity_level": "INACTIVE",
+      "segment": "INDIVIDUAL",
+      "income": "203.4"
+    }'
+----
+
+#### (Response)
+    Response: 
+    {
+      "msg": "Recommendations for user generated successfully",
+      "response_data": {
+        "Recommended Products": [
+          "Current Accounts",
+          "Credit Card",
+          "Direct Debit",
+          "Pensions",
+          "E-Account",
+          "Particular Account",
+          "Payroll Account"
+        ]
+      },
+      "status": "Success"
+    }
+---
+### Screenshot
+![image](https://user-images.githubusercontent.com/75078872/167313889-41ce551d-3bbb-4885-a478-9f5ddd4b0082.png)
+---
+### Example 3
+#### (Query)
+    Query:
+    curl -X 'POST' \
+      'http://10.40.60.52:5000/recommend' \
+      -H 'accept: application/json' \
+      -H 'Content-Type: application/json' \
+      -d '{
+      "age": "16",
+      "gender": "MALE",
+      "nationality": "FRANCE",
+      "seniority": "150",
+      "relationship_type": "INACTIVE",
+      "activity_level": "INACTIVE",
+      "segment": "UNIVERSITY",
+      "income": "140"
+}'
+----
+
+#### (Response)
+    Response: 
+    {
+      "msg": "Recommendations for user generated successfully",
+      "response_data": {
+        "Recommended Products": [
+          "Current Accounts",
+          "Particular Account",
+          "Direct Debit",
+          "Payroll Account",
+          "Junior Account",
+          "E-Account",
+          "Pensions"
+        ]
+      },
+      "status": "Success"
+    }
+---
+### Screenshot
+![image](https://user-images.githubusercontent.com/75078872/167313919-df2f9672-1cfd-4400-be59-5e0d56065ce3.png)
 
 ## Demo Video Link uploaded on google drive
 
