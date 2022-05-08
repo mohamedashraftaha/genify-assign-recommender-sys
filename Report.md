@@ -36,6 +36,14 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
 
 ### Using the API hosted on Heroku
 
+### Docker Container 
+#### Build
+    docker build --tag python-docker .
+#### Run
+    docker run python-docker 
+
+
+
 ## Example Queries (Also attached in the report)
 ### Example 1
 #### (Query)
