@@ -35,6 +35,7 @@ This is assignment is assigned by Genify. It requires a REST API around a machin
 
 
 ### Using the API hosted on Heroku
+    [Genify Recommendation Task](https://genify-api-task.herokuapp.com/) URL Hosted on Heroku
 
 ### Docker Container 
 #### Build
