@@ -1,9 +1,13 @@
 
 # genify-assign-recommender-sys
 
+
+
 ## Description
 This is assignment is assigned by Genify. It requires a REST API around a machine learning model that recommends banking products.
 
+## Estimated Time to complete the assessment:
+4 to 5 hrs. This is because this was my first encounter with ML models.
 
 ## Software Requirements
 * Python3
